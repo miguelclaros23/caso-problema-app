@@ -1,0 +1,127 @@
+spring:
+  profiles:
+    active: sandbox
+
+---
+
+spring:
+  profiles: develop
+  datasource:
+    url: jdbc:oracle:thin:@//10.193.0.10:1521/delivery
+    username: delivery
+    password: Farmat0d0
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  http:
+    converters:
+      preferred-json-mapper: gson
+logging:
+  level:
+    root: INFO
+    co:
+      ricky-morty:
+        cv: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+configuration:
+  properties:
+    fixedrate:
+      milliseconds: 1800000
+
+---
+
+spring:
+  profiles: sandbox
+  datasource:
+    url: jdbc:oracle:thin:@//10.232.8.3:1521/delivery
+    username: delivery
+    password: Farmat0d0
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: false
+  http:
+    converters:
+      preferred-json-mapper: gson
+logging:
+  level:
+    root: INFO
+    co:
+      ricky-morty:
+        cv: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+configuration:
+  properties:
+    fixedrate:
+      milliseconds: 1800000
+
+---
+
+spring:
+  profiles: production
+  datasource:
+    url: jdbc:oracle:thin:@//10.193.0.3:1521/delivery
+    username: delivery
+    password: Farmat0d0
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: false
+  http:
+    converters:
+      preferred-json-mapper: gson
+logging:
+  level:
+    root: INFO
+    co:
+      ricky-morty:
+        cv: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+configuration:
+  properties:
+    fixedrate:
+      milliseconds: 1800000
+
+---
+
+spring:
+  profiles: hotfix
+  datasource:
+    url: jdbc:oracle:thin:@//10.193.0.3:1521/delivery
+    username: delivery
+    password: Farmat0d0
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  http:
+    converters:
+      preferred-json-mapper: gson
+logging:
+  level:
+    root: INFO
+    co:
+      ricky-morty:
+        cv: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+configuration:
+  properties:
+    fixedrate:
+      milliseconds: 1800000

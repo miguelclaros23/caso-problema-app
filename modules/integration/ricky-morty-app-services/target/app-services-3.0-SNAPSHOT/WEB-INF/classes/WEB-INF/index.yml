@@ -1,0 +1,6 @@
+indexes:
+
+  kind: TestDatastore
+  properties:
+    name: active
+  

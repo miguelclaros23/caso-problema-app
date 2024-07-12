@@ -1,0 +1,20 @@
+service: ricky-morty-dev
+env: standard
+runtime: java11
+instance_class: F4
+inbound_services:
+  - warmup
+automatic_scaling:
+  max_instances: 100
+  min_instances: 1
+  max_idle_instances: 15
+  min_idle_instances: 2
+  target_cpu_utilization: 0.5
+  target_throughput_utilization: 0.5
+  max_concurrent_requests: 70
+  max_pending_latency: automatic
+  min_pending_latency: automatic
+vpc_access_connector:
+  name: "projects/ricky-morty-369418/locations/us-central1/connectors/ricky-morty-serverless"
+env_variables:
+  SPRING_PROFILES_ACTIVE: "develop"

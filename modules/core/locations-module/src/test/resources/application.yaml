@@ -1,0 +1,31 @@
+spring:
+  profiles: develop
+  datasource:
+    url: jdbc:mysql://localhost:3306/ricky-morty
+    username: mysql
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  http:
+    converters:
+      preferred-json-mapper: gson
+cxf:
+  path: /soap-adapter/ws
+logging:
+  level:
+    root: INFO
+    co:
+      ricky-morty:
+        cv: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+configuration:
+  properties:
+    fixedrate:
+      milliseconds: 1800000
+
